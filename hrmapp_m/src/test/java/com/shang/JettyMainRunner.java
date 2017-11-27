@@ -12,7 +12,6 @@ import org.mortbay.jetty.webapp.WebAppContext;
 import org.mortbay.thread.QueuedThreadPool;
 
 public class JettyMainRunner {
-	protected static Logger logger = Logger.getLogger(JettyMainRunner.class);
 	private static Server server = new Server();
 	
 	public static void main(String[] args)throws Exception {
@@ -27,16 +26,16 @@ public class JettyMainRunner {
 		WebAppContext context = new WebAppContext("src/main/webapp", "/hrmapp_m");
 		context.setDefaultsDescriptor("src/test/resources/webdefault.xml");
 		
-		EnvConfiguration envConfiguration = new EnvConfiguration();
-        envConfiguration.setJettyEnvXml(new File("src/test/resources/jetty/jetty-env.xml").toURI().toURL());
-		Configuration[] configurations = new Configuration[]{
-		        new org.mortbay.jetty.webapp.WebInfConfiguration(),
-		        envConfiguration,
-		        new org.mortbay.jetty.plus.webapp.Configuration(),
-		        new org.mortbay.jetty.webapp.JettyWebXmlConfiguration(),
-		        new org.mortbay.jetty.webapp.TagLibConfiguration()
-		};
-		context.setConfigurations(configurations);
+//		EnvConfiguration envConfiguration = new EnvConfiguration();
+//        envConfiguration.setJettyEnvXml(new File("src/test/resources/jetty/jetty-env.xml").toURI().toURL());
+//		Configuration[] configurations = new Configuration[]{
+//		        new org.mortbay.jetty.webapp.WebInfConfiguration(),
+//		        envConfiguration,
+//		        new org.mortbay.jetty.plus.webapp.Configuration(),
+//		        new org.mortbay.jetty.webapp.JettyWebXmlConfiguration(),
+//		        new org.mortbay.jetty.webapp.TagLibConfiguration()
+//		};
+//		context.setConfigurations(configurations);
 		
 		server.setHandler(context);
 
@@ -46,7 +45,6 @@ public class JettyMainRunner {
 		server.start();
 		String res = "\n\n\nStartUP 0000000000000000000000000000";
 		System.out.println(res);
-		logger.info(res);
 		server.join();
 	}
 }
