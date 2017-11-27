@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure id="wac" class="org.mortbay.jetty.webapp.WebAppContext">
+
+	<New id="dataSourceMySql" class="org.apache.commons.dbcp.BasicDataSource">
+        <Set name="driverClassName">org.gjt.mm.mysql.Driver</Set>
+		<Set name="url">jdbc:mysql://127.0.0.1:3306/mvc?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true</Set>
+		<Set name="username">root</Set>
+		<Set name="password">root</Set>
+		<Set name="validationQuery">select 1</Set>
+		<Set name="maxActive">20</Set>
+		<Set name="maxIdle">10</Set>
+		<Set name="maxWait">100000</Set>
+		<Set name="minEvictableIdleTimeMillis">10000</Set>
+		<Set name="timeBetweenEvictionRunsMillis">10000</Set>
+    </New>
+    <New id="app_Datasource" class="org.mortbay.jetty.plus.naming.EnvEntry">
+		<Arg>jdbc/dataSourceM</Arg>
+		<Arg>
+			<Ref id="dataSourceMySql"/>
+		</Arg>
+	</New>
+	<Call name="setAttribute">  
+	    <Arg>org.eclipse.jetty.server.Request.maxFormContentSize</Arg>  
+	    <Arg>100000</Arg>  
+	</Call>  
+	<Call name="setAttribute">  
+		<Arg>org.eclipse.jetty.server.Request.maxFormKeys</Arg>  
+		<Arg>2000</Arg>  
+	</Call> 
+</Configure>
