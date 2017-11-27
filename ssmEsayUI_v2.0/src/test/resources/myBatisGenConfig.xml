@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3">
+        <plugin type="com.pulgins.SerializablePlugin"></plugin>
+        <plugin type="com.pulgins.SqlMapPlugin"></plugin>
+		<!-- 添加注释 -->
+        <commentGenerator type="com.pulgins.FieldCommentGenerator">
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="org.gjt.mm.mysql.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/mvc?useUnicode=true&amp;characterEncoding=UTF-8"
+            userId="root" password="root">
+            <property name="remarksReporting" value="true" />
+        </jdbcConnection>
+        
+        <!--  默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer   
+         true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal   
+     		-->  
+		<javaTypeResolver >  
+     		<property name="forceBigDecimals" value="false" />  
+  		</javaTypeResolver>  
+  		
+		 <!-- targetProject:自动生成代码的位置 -->
+        <javaModelGenerator targetPackage="com.shang.dal.model" targetProject="src/main/java">
+            <!-- 从数据库返回的值被清理前后的空格  -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+		
+		<!-- SqlMap文件生成配置  ..-->
+        <sqlMapGenerator targetPackage="sqlMap" targetProject="src/main/resources">
+       		<property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+		
+		<!-- Dao生成配置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shang.dal.dao" targetProject="src/main/java">
+        </javaClientGenerator>
+		
+		<!-- tableName % 所有的数据库表 - 对应属性 首字母大写—_后首字母大写 -->
+        <table tableName="student" domainObjectName="Student" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        <table tableName="t_menu" domainObjectName="Menu" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        <table tableName="t_role" domainObjectName="Role" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        <table tableName="t_user" domainObjectName="User" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        <table tableName="t_role_menus" domainObjectName="RoleMenus" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        <table tableName="t_user_roles" domainObjectName="UserRoles" >
+        	<generatedKey column="id" sqlStatement="select UUID()" identity="false"/>
+        </table>
+        
+        
+    </context>
+
+</generatorConfiguration>
