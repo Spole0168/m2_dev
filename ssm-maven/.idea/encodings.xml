@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/admin" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/admin/ArticleController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/admin/LoadImageController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/admin/PictureController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/dao" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/dao/ArticleDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/dao/PictureDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/entity" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/entity/Article.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/entity/Picture.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/service" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/service/ArticleService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/service/PictureService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/service/impl/ArticleServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/service/impl/PictureServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ssm/maven/core/util" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/log4j.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mappers" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mappers/PictureMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/Store.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBook.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBookController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBookDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBookMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBookService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreBookServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/store_jsp/StoreServiceImpl.java" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
