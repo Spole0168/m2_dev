@@ -4,7 +4,7 @@
 
 	<New id="dataSourceMySql" class="org.apache.commons.dbcp.BasicDataSource">
         <Set name="driverClassName">org.gjt.mm.mysql.Driver</Set>
-		<Set name="url">jdbc:mysql://127.0.0.1:3306/mvc?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true</Set>
+		<Set name="url">jdbc:mysql://127.0.0.1:3306/db_mvc?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true</Set>
 		<Set name="username">root</Set>
 		<Set name="password">root</Set>
 		<Set name="validationQuery">select 1</Set>

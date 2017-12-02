@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dal.dao.ext.ExtMapper">
+  <resultMap id="User_BaseResultMap" type="com.shang.dal.model.User">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="is_valid" jdbcType="CHAR" property="isValid" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap id="MenuDto_BaseResultMap" type="com.shang.dto.MenuDto">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="menu_pid" jdbcType="VARCHAR" property="menuPid" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="menu_code" jdbcType="VARCHAR" property="menuCode" />
+    <result column="menu_type" jdbcType="VARCHAR" property="menuType" />
+    <result column="menu_level" jdbcType="INTEGER" property="menuLevel" />
+    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
+    <result column="menu_order" jdbcType="VARCHAR" property="menuOrder" />
+    <result column="is_valid" jdbcType="CHAR" property="isValid" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap id="Menu_BaseResultMap" type="com.shang.dal.model.Menu">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="menu_pid" jdbcType="VARCHAR" property="menuPid" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="menu_code" jdbcType="VARCHAR" property="menuCode" />
+    <result column="menu_type" jdbcType="VARCHAR" property="menuType" />
+    <result column="menu_level" jdbcType="INTEGER" property="menuLevel" />
+    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
+    <result column="menu_order" jdbcType="VARCHAR" property="menuOrder" />
+    <result column="is_valid" jdbcType="CHAR" property="isValid" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="User_Base_Column_List">
+    id, username, password, tel, email, name, is_valid, creator, create_time, updator, 
+    update_time
+  </sql>
+  <sql id="Menu_Base_Column_List">
+    id, menu_pid, menu_name, menu_code, menu_type, menu_level, menu_url, menu_order, 
+    is_valid, creator, create_time, updator, update_time
+  </sql>
+  
+  
+  <select id="queryUserByOrConditions" parameterType="com.shang.dal.model.User" resultMap="User_BaseResultMap">
+	    select
+	    <include refid="User_Base_Column_List" />
+	    from t_user
+	    where username =#{username}
+ 		<if test="null!= tel and tel !=''">
+   			or tel =#{tel}
+	   	</if>
+	 	<if test="null!= email and email !=''">
+	   		or email =#{email}
+	   	</if>
+    	
+  </select>
+  
+  <select id="queryMenusByConditions" parameterType="com.shang.dal.model.Menu" resultMap="MenuDto_BaseResultMap">
+	    select
+	    <include refid="Menu_Base_Column_List" />
+	    from t_menu  
+	    where 1=1
+<!--         <if test="null!= username and username !=''"> -->
+<!--     		and username =#{username} -->
+<!--     	</if> -->
+    	
+  </select>
+  <select id="getMenuListByUser" parameterType="com.shang.dal.model.User" resultMap="Menu_BaseResultMap">
+	    select
+	    <include refid="Menu_Base_Column_List" />
+	    from t_menu  
+	    where id in (
+	    select menu_id from t_role_menus where role_id in(
+		select role_id from t_user_roles where user_id = #{id} )
+	    )
+    	
+  </select>
+  
+  
+  
+</mapper>
