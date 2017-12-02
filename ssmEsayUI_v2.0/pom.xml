@@ -19,7 +19,7 @@
 		<javassist.version>3.16.1-GA</javassist.version>
 		<cglib.version>2.2.2</cglib.version>
 		<junit.version>4.10</junit.version>
-		<servlet.version>2.5</servlet.version>
+		<servlet.version>3.0.1</servlet.version>
 		<jsp.version>2.0</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<fastjson.version>1.1.41</fastjson.version>
@@ -191,8 +191,8 @@
 
 		<!-- Servlet，jsp，jstl依赖 -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
