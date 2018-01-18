@@ -6,7 +6,7 @@ import org.mortbay.jetty.nio.SelectChannelConnector;
 import org.mortbay.jetty.webapp.WebAppContext;
 import org.mortbay.thread.QueuedThreadPool;
 
-public class JettyMainRunner {
+public class HomeBankMain {
 	
 	private static Server server = new Server();
 	
