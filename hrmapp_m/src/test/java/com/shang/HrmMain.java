@@ -11,7 +11,7 @@ import org.mortbay.jetty.webapp.Configuration;
 import org.mortbay.jetty.webapp.WebAppContext;
 import org.mortbay.thread.QueuedThreadPool;
 
-public class JettyMainRunner {
+public class HrmMain {
 	private static Server server = new Server();
 	
 	public static void main(String[] args)throws Exception {

@@ -1,7 +1,9 @@
 package org.fkit.hrm.controller;
 
 import java.util.List;
+
 import javax.servlet.http.HttpSession;
+
 import org.fkit.hrm.domain.User;
 import org.fkit.hrm.service.HrmService;
 import org.fkit.hrm.util.common.HrmConstants;
@@ -52,6 +54,17 @@ public class UserController {
 			// 服务器内部跳转到登录页面
 			mv.setViewName("forward:/loginForm");
 		}
+		return mv;
+		
+	}
+	@RequestMapping(value="/logout")
+	public ModelAndView logout(HttpSession session,ModelAndView mv){
+		// 调用业务逻辑组件判断用户是否可以登录
+		Object user = session.getAttribute(HrmConstants.USER_SESSION);
+		if(null!=user&&user.toString().length() !=0){
+			session.removeAttribute(HrmConstants.USER_SESSION);
+		}
+		mv.setViewName("forward:/loginForm");
 		return mv;
 		
 	}
